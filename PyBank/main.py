@@ -3,6 +3,7 @@ import csv
 
 month_count = 0
 total_amount = 0.00
+average_change = 0
 
 flpth = os.path.join("D:\\UOFT DATA ANALYTICS\\Homeworks\\3 Python Homework\\Big Data Analysis using Python\\python-challenge\\PyBank\\budget_data.csv")
 
