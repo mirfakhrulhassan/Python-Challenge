@@ -31,5 +31,16 @@ print("-----------------------------------------------------------")
 print(f"Total Months:  {month_count}")
 print(f"Total: $ {total_amount}")
 print(f"Average  Change: $ {round(average_change,2)}")
-print(f"Greatest Increase in Profits:{dateList[(average_chnge.index(max(average_chnge)))+1]} (${max(average_chnge)})")
-print(f"Greatest Decrease in Profits:{dateList[(average_chnge.index(min(average_chnge)))+1]} (${min(average_chnge)})")
+print(f"Greatest Increase in Profits:  {dateList[(average_chnge.index(max(average_chnge)))+1]} (${max(average_chnge)})")
+print(f"Greatest Decrease in Profits:  {dateList[(average_chnge.index(min(average_chnge)))+1]} (${min(average_chnge)})")
+
+outflpth = "PyBank.txt"
+
+with open(outflpth,"w") as textFile:
+    textFile.write("Financial Analysis \n")
+    textFile.write("----------------------------------------------------------- \n")
+    textFile.write(f"Total Months:  {month_count}\n")
+    textFile.write(f"Total: $ {total_amount}\n")
+    textFile.write(f"Average  Change: $ {round(average_change,2)}\n")
+    textFile.write(f"Greatest Increase in Profits:  {dateList[(average_chnge.index(max(average_chnge)))+1]} (${max(average_chnge)})\n")
+    textFile.write(f"Greatest Decrease in Profits:  {dateList[(average_chnge.index(min(average_chnge)))+1]} (${min(average_chnge)})\n")
