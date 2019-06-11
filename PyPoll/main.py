@@ -33,12 +33,13 @@ for y in range(len(candidate_unique)):
     
     
 max = 0 
-
+percentge = 0
 print("Election Results")
 print("---------------------------------------------------------")
 print(f"Total Votes: {len(voter_id)}")
 print("---------------------------------------------------------")
 for z in range(len(candidate_unique)):
+    
     print(f"{candidate_unique[z]}: {(unique_cnt[z]/len(voter_id))*100}%  ({unique_cnt[z]})")
     if unique_cnt[z]>=max:
         max = unique_cnt[z]
@@ -47,3 +48,17 @@ for z in range(len(candidate_unique)):
 print("---------------------------------------------------------")
 print(f"Winner: {winner}")
 print("---------------------------------------------------------")
+
+outflpth = "PyPoll.txt"
+
+with open(outflpth,"w") as textFile:
+    textFile.write("Election Results \n")
+    textFile.write("--------------------------------------------------------- \n")
+    textFile.write(f"Total Votes: {len(voter_id)} \n")
+    textFile.write("--------------------------------------------------------- \n")
+    for z1 in range(len(candidate_unique)):
+        textFile.write(f"{candidate_unique[z1]}: {(unique_cnt[z1]/len(voter_id))*100}%  ({unique_cnt[z1]}) \n")
+    
+    textFile.write("--------------------------------------------------------- \n")
+    textFile.write(f"Winner: {winner} \n")
+    textFile.write("--------------------------------------------------------- \n")
